@@ -1,0 +1,22 @@
+function solve(input) {
+  let first = Number(input.shift());
+  let second = Number(input.shift());
+  let third = Number(input.shift());
+  let fourt = Number(input.shift());
+
+  for(let i = first;i <= second;i++){
+    for(let j = first;j <= second;j++){
+        for(let m = third;m <= fourt;m++){
+            for(let n = third;n <= fourt;n++){
+                if(i + n == j + m){
+                    if(i != j && m != n){
+                        console.log(`${i}${j}`)
+                        console.log(`${m}${n}`)
+                        console.log(" ")
+                    }
+                    }
+                }
+            }
+        }
+    }
+}
