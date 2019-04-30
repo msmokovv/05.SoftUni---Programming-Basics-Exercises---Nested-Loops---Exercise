@@ -1,0 +1,27 @@
+function solve(input){
+  let first = Number(input.shift());
+  let second = Number(input.shift());
+  let line = "";
+ for(let i = first;i <= second;i++){
+   let num = i.toString();
+   let leftSum = Number(num[0]) + Number(num[1]);
+   let middleDigit = Number(num[2]);
+   let rightSum = Number(num[3]) + Number(num[4]);
+    
+      if(rightSum == leftSum){
+        line += num + " "; 
+      }
+      else if(leftSum > rightSum){
+        rightSum += middleDigit;
+        if(rightSum == leftSum){
+          line += num + " "; 
+        }
+      }else if(leftSum < rightSum){
+        leftSum += middleDigit;
+        if(leftSum == rightSum){
+          line += num + " ";
+        } 
+      }
+    }
+  console.log(line);
+}
