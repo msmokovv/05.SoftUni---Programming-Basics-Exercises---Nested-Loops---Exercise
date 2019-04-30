@@ -1,0 +1,21 @@
+function solve(input){
+  let judges = Number(input.shift());
+  let presentation = input.shift();
+
+  let allGrades = 0;
+  let gradeCount = 0;
+  while (presentation != "Finish"){
+    let gradePerPres = 0;
+    for(let i = 1;i <= judges;i++){
+      let grade = Number(input.shift());
+      gradeCount++;
+      gradePerPres += grade;
+      allGrades += grade;
+    }
+    let avgPerPres = gradePerPres / judges;
+    console.log(`${presentation} - ${avgPerPres.toFixed(2)}.`)
+      presentation = input.shift();
+  }
+  let avgFinal = allGrades / gradeCount; 
+  console.log(`Student's final assessment is ${avgFinal.toFixed(2)}.`);
+}
